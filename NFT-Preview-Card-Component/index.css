@@ -163,6 +163,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   max-height: 10%;
+  width: min(20rem, 85%);
 }
 
 .avatar {
