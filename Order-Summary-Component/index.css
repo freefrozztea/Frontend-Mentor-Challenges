@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+:root {
+  --bg-main: hsl(225, 100%, 94%);
+  --bg-card: hsl(0, 0%, 100%);
+  --color-blue: hsl(215, 51%, 70%);
+  --description-color: hsl(220, 15%, 55%);
+  --color-white: #eeeeee;
+  --title-color: hsl(223, 47%, 23%);
+  --primary-button-color: hsl(245, 75%, 52%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  height: -webkit-fill-available;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red !important */
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.container {
+  width: 100%;
+  height: calc(100vh - 5vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card {
+  width: min(85%, 26.5rem);
+  height: min(75%, 40rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-card);
+  border-radius: 1.25rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+}
+
+.image-container img {
+  object-fit: cover;
+  border-radius: 1.25rem 1.25rem 0px 0px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text content */
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  height: 30%;
+  width: 90%;
+  text-align: center;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.title {
+  color: var(--title-color);
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: var(--description-color);
+  font-size: 0.95rem;
+  letter-spacing: 0.015em;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Payment Content */
+
+.plan-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75%;
+  margin: 0 2.25rem 1rem 2rem;
+  font-size: 0.75rem;
+}
+
+.plan-box-left {
+  display: flex;
+  gap: 1rem;
+}
+
+.plan-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-price {
+  color: var(--description-color);
+  font-size: 0.8rem;
+}
+
+.plan-box-right a{
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--primary-button-color);
+  /* opacity: 1; */
+  transition: all .2s ease;
+}
+
+.plan-box-right a:hover {
+  opacity: 0.7;
+}
+
+/* Buttons */
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-height: 30%;
+  width: 90%;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  all: unset;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 0.9rem;
+  display: block;
+  margin: none;
+  border-radius: 0.75rem;
+  font-weight: 700;
+}
+
+.primary-button {
+  background: var(--primary-button-color);
+  box-shadow: 0 15px 20px 0 hsla(245, 75%, 52%, .25);
+  display: block;
+  width: 85%;
+  color: var(--color-white);
+  transition: all .2s ease;
+}
+
+.primary-button:hover {
+  opacity: 0.7;
+}
+
+.cancel-button{
+  display: block;
+  width: 85%;
+  color: var(--description-color);
+}
+
+.cancel-button:hover {
+  color: var(--title-color);
+}
+
+/* Footer */
+
+.footer-atribution {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.attribution { 
+  font-size: 0.7rem; 
+}
+
+.attribution a { 
+  color: hsl(228, 45%, 44%); 
+}
+
+/* Media Queries */
+@media screen and (min-width: 480px) {
+  .container {
+    background-image: url(./images/pattern-background-desktop.svg);
+  }
+
+  .image-container img {
+    margin-bottom: 1rem;
+  }
+
+  .text-container {
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+    letter-spacing: 0.015em;
+  }
+
+  .plan-container {
+    width: 65%;
+    font-size: 0.8rem;
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  .plan-price {
+    font-size: 1rem;
+  }
+
+  .plan-box-right a{
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .plan-box-left {
+    gap: 0.25rem;
+  }
+}
+
