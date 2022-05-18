@@ -3,7 +3,7 @@
 :root {
   --bg-main: hsl(233, 47%, 7%);
   --bg-card: hsl(244, 38%, 16%);
-  --accent-color: hsl(277, 64%, 61%);
+  --accent-color: hsl(277, 64%, 61%, 1.3);
   --title-color: #eeeeee;
   --description-color: hsla(0, 0%, 100%, 0.6);
   --stats-name-color: hsla(0, 0%, 100%, 0.5);
@@ -64,13 +64,24 @@ body {
   position: relative;
 }
 
+.box-image::after {
+  background-color: #550081;
+  border-radius: 0 .5rem .5rem 0;
+  content: '';
+  opacity: .5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 .overlay {
   width: 100%;
   height: 100%;
   background-color: var(--accent-color);
-  opacity: 0.6;
+  opacity: 0.1;
   border-radius: inherit;
   position: absolute;
+  mix-blend-mode: difference;
 }
 
 /* Box Details */
@@ -102,6 +113,7 @@ body {
 
 .description {
   font-size: 0.9rem;
+  font-weight: 400;
   color: var(--description-color);
 }
 
@@ -153,8 +165,8 @@ body {
 /* Media Queries */
 @media screen and (min-width: 480px) {
   .card {
-    width: max(70%, 20.5rem);
-    height: min(65%, 40rem);
+    width: max(60%, 20.5rem);
+    height: min(50%, 40rem);
     flex-direction: row;
   }
 
@@ -175,17 +187,18 @@ body {
     height: 100%;
     width: 50%;
     text-align: left;
-    padding: 4rem;
-    margin-top: 2rem;
+    padding: 0 5rem;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    padding-bottom: 1rem;
   }
 
   .description{
-    font-size: 0.7rem;
-    padding-right: 4rem;
+    font-size: 0.9rem;
+    padding-right: 5rem;
   }
 
   .stats-content {
@@ -198,10 +211,10 @@ body {
   }
 
   .stats-num {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   
   .stats-name {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }
