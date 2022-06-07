@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Big+Shoulders+Display:wght@700&display=swap');
+
+:root {
+  --bg-mid: hsl(179, 62%, 43%);
+  --bg-start: rgba(246, 249, 251, 0.931);
+  --bg-end: rgb(1, 231, 227, 0.833);
+  --bg-main: #eeeeee;
+  --text-color: #fefefe;
+  --text-description: hsl(218, 22%, 67%);
+  --btn-color: hsl(71, 73%, 54%);
+}
+
+html{
+  box-sizing: border-box;
+  font-size:  16px;
+  height: -webkit-fill-available;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  /* outline: 1px solid red !important  */
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Karla', sans-serif;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-main);
+  padding: 2rem;
+}
+
+.container {
+  min-width: 80%;
+  display: grid;
+  grid-template-areas: 
+    "about"
+    "plan"
+    "plan";
+  aspect-ratio: 16 / 9;
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.about {
+  grid-area: about;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--bg-start);
+  gap: 0.5rem;
+  padding: 1.5rem 1.25rem;
+}
+
+.title {
+  color: var(--bg-mid);
+}
+
+.guarantee {
+  color: var(--btn-color);
+  font-weight: 700;
+}
+
+.description {
+  color: var(--text-description);
+  font-size: 0.9rem;
+}
+
+.plan {
+  grid-area: plan;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.plan__suscription {
+  background-color: var(--bg-mid);
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.plan__whyus {
+  background-color: var(--bg-end);
+  padding: 1.5rem;
+  width: 100%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.plan__price{
+  font-size: 2.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.time-offer {
+  color: var(--text-description);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.list {
+  width: 80%;
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.btn {
+  border: none;
+  padding: 0.9rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.25);
+  background-color: var(--btn-color);
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+.footer-atribution {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    align-items: center;
+  }
+
+  .container {
+    place-content: center;
+    min-width: 40%;
+    grid-template-areas: 
+      "about"
+      "plan";
+    grid-template-rows: 45% 55% auto;
+  }
+
+  .about {
+    min-height: 100%;
+    gap: 0.8rem;
+    justify-content: center;
+    width: 80%;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .plan {
+    flex-direction: row;
+  }
+
+  .plan__suscription {
+    min-height: 100%;
+    padding: 1.5rem 3rem;
+    border-radius: 0 0 0 0.5rem;
+  }
+
+  .btn {
+    width: calc(100% - 3rem);
+    padding: 1.3rem;
+    font-size: 1.3rem;
+    margin-left: 1.5rem;
+  }
+
+  .plan__whyus{
+    min-height: 100%;
+    border-radius: 0 0 0.5rem 0;
+  }
+
+  .footer-atribution {
+    margin-top: 0.5rem;
+  }
+}
